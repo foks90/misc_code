@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>cats</title>
+		<style>
+			p {
+				font-family: Calibri;
+				margin: 0;
+				font-size: 20px;
+			}
+			
+			.flex1 {
+				display: flex;
+				flex-direction: column;
+				width: 300px;
+				margin-bottom: 10px;
+			}
+
+			.flex_card {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				gap: 15px;
+			}
+
+			.section_m {
+				flex: 1;
+			}
+
+			.name {
+				font-weight: bold;
+			}
+
+			.text1, .text2 {
+				color: grey;
+			}
+
+			.text2 {
+				font-size: 16px;
+			}
+
+			.pic {
+				height: 50px;
+				width: 50px;
+				object-fit: cover;
+				border-radius: 25px;
+			}
+
+			button {
+				background-color: rgb(0, 128, 255);
+				color: white;
+				padding: 10px;
+				border: none;
+				border-radius: 4px;
+				font-size: 20px;
+				cursor: pointer;
+				transition: background-color .15s;
+			}
+
+			button:hover {
+				background-color: rgb(0, 51, 255);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="flex1">
+			<div class="flex_card">
+				<div class="section_l">
+					<img class="pic" src="cat1.jpg" alt="cat1">
+				</div>
+				<div class="section_m">
+					<p class="name">Oliver</p>
+					<p class="text1">the cat</p>
+					<p class="text2">Popular</p>
+				</div>
+				<div class="section_r">
+					<button>Follow</button>
+				</div>
+			</div>
+		</div>
+		<div class="flex1">
+			<div class="flex_card">
+				<div class="section_l">
+					<img class="pic" src="cat2.jpg" alt="cat2">
+				</div>
+				<div class="section_m">
+					<p class="name">Mimi</p>
+					<p class="text1">sleepy cat</p>
+					<p class="text2">Popular</p>
+				</div>
+				<div class="section_r">
+					<button>Follow</button>
+				</div>
+			</div>
+		</div>
+		<div class="flex1">
+			<div class="flex_card">
+				<div class="section_l">
+					<img class="pic" src="luna.jpg" alt="luna">
+				</div>
+				<div class="section_m">
+					<p class="name">Luna</p>
+					<p class="text1">goodest of girls</p>
+					<p class="text2">most popular</p>
+				</div>
+				<div class="section_r">
+					<button>Follow</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

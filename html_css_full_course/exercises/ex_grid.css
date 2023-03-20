@@ -1,0 +1,25 @@
+.gr_1 {
+	display: grid;
+	grid-template-columns: 200px 75px;
+}
+
+.gr_2 {
+	margin-top: 30px;
+	display: grid;
+	grid-template-columns: 50px 1fr 75px;
+}
+
+.gr_3 {
+	margin-top: 30px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 10px 20px;
+}
+
+.lightblue {
+	background-color: lightblue;
+}
+
+.lightpink {
+	background-color: lightpink;
+}

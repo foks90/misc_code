@@ -1,0 +1,25 @@
+* {
+	background-color: rgb(26, 26, 26);
+}
+
+button {
+	background-color: rgb(63, 63, 63);
+	color: white;
+	font-size: 16px;
+	font-family: "calibri", "arial";
+	padding: 4px 8px;
+	margin: 0px 4px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color .15s, color .15s;
+}
+
+button:hover {
+	background-color: rgb(103, 103, 103);
+}
+
+button:focus {
+	color:rgb(63, 63, 63);
+	background-color: white;
+}

@@ -1,0 +1,33 @@
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	width: 70px;
+	left: 0;
+	top: 55px;
+	bottom: 0;
+	background-color: rgb(255, 255, 255);
+	align-items: center;
+	flex-shrink: 0;
+}
+
+.button-sidebar {
+	height: 70px;
+	width: 100%;
+	border: none;
+	background-color: transparent;
+	flex-shrink: 0;
+}
+
+.button-sidebar:hover {
+	background-color: rgb(240, 240, 240);
+}
+
+.sidebar-text {
+	font-size: 10px;
+}
+
+.icon-sidebar {
+	width: 24px;
+	height: 24px;
+}

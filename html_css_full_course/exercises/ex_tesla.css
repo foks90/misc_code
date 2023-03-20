@@ -1,0 +1,11 @@
+div {
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
+	text-align: center;
+}
+
+.headline {
+	font-size: 30px;
+	font-weight: bold;
+	margin: 20px;
+}
