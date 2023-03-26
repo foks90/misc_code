@@ -1,0 +1,12 @@
+* {
+    font-family: Consolas, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: rgb(205, 205, 205);
+    background-color: rgb(40, 44, 48);
+    padding-top: 80px;
+    padding-left: 80px;
+}

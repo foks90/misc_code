@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Todo App</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1 id="header-text"></h1>
+        <button onclick="addTodo()">Add Todo</button>
+        <input id="todo-title" type="text" placeholder="Add another todo">
+        <script>
+            const headline = document.querySelector('#header-text');
+            headline.innerText = 'My todo list';
+
+            let todos = ['some stuff', 'anything', 'whatever', 'tennis'];
+            
+            render();
+            function addTodo () {
+                const inputValue = document.querySelector('#todo-title');
+                let title = inputValue.value;
+                todos.push(title);
+                render();
+            }
+
+            function render () {
+                todos.forEach(todo => {
+                    let element = document.createElement('div');
+                    element.innerText = todo;
+                    document.body.appendChild(element);
+                });
+            }
+        </script>
+    </body>
+</html>

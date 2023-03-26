@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercises</title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <h1>Exercises</h1>
+        <button id="todo-button" onclick="buttonClick();">Click Me!</button>
+        <p></p>
+        <div id="counter">0</div>
+        <button onclick="counterUp();">Up</button>
+        <button onclick="counterDown();">Down</button>
+        <script>
+            let strArray = ['michi', 'lsdf', 'lasf'];
+            function toUpper(str) {
+                let result = str.map(x => x.toUpperCase());
+                console.log(result)
+            }
+            toUpper(strArray);
+
+            function arrayDouble(arr) {
+                let result = [];
+                arr.forEach(el => {
+                    result.push(el);
+                    result.push(el);
+                });
+                console.log(result);
+            }
+            arrayDouble(strArray);
+
+            const intArr = [1,2,3,4,5,6];
+            function arraySum(intArr) {
+                console.log(intArr.reduce((sum, el) => sum += el));
+            }
+            arraySum(intArr);
+
+            function buttonClick() {
+                let btn = document.querySelector('#todo-button');
+                let txt = btn.innerText;
+                if (txt === 'Click Me!') {
+                    btn.innerText = 'Done';
+                } else {
+                    btn.innerText = 'Click Me!';
+                }
+            }
+
+            
+            function counterUp() {
+                const countDiv = document.querySelector('#counter');
+                let count = countDiv.innerText;
+                count ++;
+                countDiv.innerText = count;
+            }
+            function counterDown() {
+                const countDiv = document.querySelector('#counter');
+                let count = countDiv.innerText;
+                count --;
+                countDiv.innerText = count;
+            }
+        </script>
+    </body>
+</html>

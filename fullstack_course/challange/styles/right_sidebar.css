@@ -1,0 +1,65 @@
+.navbar {
+    position: fixed;
+    background-color: rgb(40, 44, 48);
+    right: 0;
+    top: 80px;
+    bottom: 80px;
+    width: 330px;
+    border: 0 solid  rgb(136, 128, 82);
+    border-left-width: 1.5px;
+    z-index: 100;
+}
+
+.navbar-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 20px 0 0 20px;
+}
+
+.navbar-txt {
+    color: rgb(136, 128, 82);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.navbar-btn,
+.navbar-btn-riddle {
+    width: 200px;
+    height: 40px;
+    background-color: transparent;
+    color: rgb(136, 128, 82);
+    font-size: 17px;
+    cursor: pointer;
+    transition: background-color .1s, color .1s;
+}
+
+.navbar-btn {
+    border: 1.5px solid rgb(136, 128, 82);
+    border-radius: 6px;
+}
+
+.navbar-btn:hover {
+    background-color: rgba(134, 129, 103, 0.477);
+    color: rgb(177, 177, 177);
+}
+
+.navbar-btn:active {
+    background-color: rgb(134, 129, 103);
+    color: rgb(242, 242, 242);
+}
+
+.navbar-btn-riddle {
+    border: none;
+    text-decoration: underline;
+    height: 20px;
+}
+
+.navbar-btn-riddle:hover {
+    color: white;
+}
+
+.navbar-btn-riddle:active {
+    font-weight: bold;
+}

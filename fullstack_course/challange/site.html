@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Challenge</title>
+        <link rel="stylesheet" href="styles/general.css">
+        <link rel="stylesheet" href="styles/header.css">
+        <link rel="stylesheet" href="styles/right_sidebar.css">
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/footer.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-section-left">
+                <img class="header-logo" src="images/white-fox.png" alt="white-fox">
+                <div class="header-section-left-text">
+                    <div class="txt-1">Lesson 7 HTML Challenge Soution #fullstackroadmap</div>
+                    <div class="txt-2">Foks</div>
+                </div>
+            </div>
+            <div class="header-section-right">
+                <button class="header-btn"><img class="header-icon" src="images/icon_like.png" alt="like"></button>
+                <button class="header-btn">
+                    <img class="header-icon" src="images/icon_view.png" alt="change">
+                    <div class="header-btn-txt">Change view</div>
+                </button>
+                <button class="header-btn"><img class="header-icon" src="images/icon_pin.png" alt="pin"></button>
+                <img id="header-img-profile" src="images/profile.jpg" alt="profile">
+            </div>
+        </header>
+        <nav class="navbar">
+            <div class="navbar-content">
+                <p class="navbar-txt">Actions</p>
+                <button class="navbar-btn" onclick="showMeme()">Show a Meme</button>
+                <button class="navbar-btn" onclick="showJoke()">Tell me a Joke</button>
+                <button class="navbar-btn" onclick="showQuote()">Random Quote</button>
+                <button class="navbar-btn" onclick="showRiddle()">Riddle me</button>
+                <button class="navbar-btn-riddle" onclick="showAnswer()">Reveal riddle answer</button>
+            </div>
+        </nav>
+        <main class="main">
+            <div class="main-content">
+                <p class="main-txt-hl">Output</p>
+                <div class="main-txt">Programmer memes</div>
+                <div class="main-txt">Tell me something funny</div>
+                <div class="main-txt">Give me some wisdom</div>
+                <div class="main-txt">I want a riddle</div>
+            </div>
+        </main>
+        <footer class="footer">Footer</footer>
+        <script src="scripts/script.js"></script>
+    </body>
+</html>

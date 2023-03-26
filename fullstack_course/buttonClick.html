@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>my site</title>
+        <link rel="stylesheet" href="styles/generalStyles.css">
+    </head>
+    <body>
+        <h1>Welcome to my HTML tutorial</h1>
+        <p>Click the button below to begin</p>
+        <button id="btn-1" class="my-btn">CLICK ME</button>
+
+        <script>
+            const btn = document.querySelector('#btn-1');
+            let count = 0;
+            function addCounterLine(count) {
+                const newDiv = document.createElement('div');
+                newDiv.textContent = 'Counter: ' + count;
+                document.body.appendChild(newDiv);
+                return count ++;
+            }
+            
+            function addParagraph() {
+                const randomNum = Math.floor(Math.random() * 100);
+                const pContent = 'Random number is ' + randomNum;
+                const newElement = document.createElement('p');
+                newElement.textContent = pContent;
+                document.body.appendChild(newElement);
+            }
+            btn.onclick = addParagraph;
+        </script>
+    </body>
+</html>

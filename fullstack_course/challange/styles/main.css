@@ -1,0 +1,20 @@
+.main {
+    padding-top: 20px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-txt-hl {
+    color: rgb(136, 128, 82);
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.main-txt {
+    color: rgb(136, 128, 82);
+    font-size: 20px;
+}
