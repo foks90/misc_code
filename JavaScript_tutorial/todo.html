@@ -5,28 +5,53 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1 id="header-text"></h1>
-        <button onclick="addTodo()">Add Todo</button>
+        <h1>My Todo List</h1>
         <input id="todo-title" type="text" placeholder="Add another todo">
+        <input id="date-picker" type="date">
+        <button onclick="addTodo()">Add Todo</button>
+        <div id="todo-list"/>
         <script>
             const headline = document.querySelector('#header-text');
-            headline.innerText = 'My todo list';
-
-            let todos = ['some stuff', 'anything', 'whatever', 'tennis'];
+            const todos = [{
+                title: 'Get groceries',
+                dueDate: '2023-03-29'
+            }, {
+                title: 'Wash car',
+                dueDate: '2023-03-31'
+            }, {
+                title: 'Tennis',
+                dueDate: '2023-03-26'
+            }];
+            
             
             render();
             function addTodo () {
                 const inputValue = document.querySelector('#todo-title');
-                let title = inputValue.value;
-                todos.push(title);
+                const title = inputValue.value;
+
+                const datePicker = document.querySelector('#date-picker');
+                const dueDate = datePicker.value;
+
+                todos.push({
+                    title: title,
+                    dueDate: dueDate
+                });
                 render();
             }
 
             function render () {
+                document.querySelector('#todo-list').innerHTML = '';
                 todos.forEach(todo => {
-                    let element = document.createElement('div');
-                    element.innerText = todo;
-                    document.body.appendChild(element);
+                    const element = document.createElement('div');
+                    element.innerText = todo.title + ' ' + todo.dueDate;
+
+                    const deleteButton = document.createElement('button');
+                    deleteButton.innerText = 'Delete';
+                    deleteButton.style = 'font-size: 14px; margin-left: 10px; padding: 2px;';
+                    element.appendChild(deleteButton);
+
+                    const todoList = document.querySelector('#todo-list');
+                    todoList.appendChild(element);
                 });
             }
         </script>
