@@ -1,44 +1,44 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Exercises 10</title>
-        <link rel="stylesheet" href="../styles.css">
-    </head>
-    <body>
-        <div id="receipt"></div>
-        <script>
+	<head>
+		<title>Exercises 10</title>
+		<link rel="stylesheet" href="../styles.css">
+	</head>
+	<body>
+		<div id="receipt"></div>
+		<script>
 
-            //1.
-            cartArray = [
-                {name: 'Apple', price: '4', quantity: '2'},
-                {name: 'Orange', price: '3', quantity: '3'}
-            ]
-            function cartTotal(arr) {
-                let total = 0
-                arr.forEach(element => {
-                    total += element.price * element.quantity;
-                });
-                return total;
-            }
-            cartTotal(cartArray);
+			//1.
+			cartArray = [
+				{name: 'Apple', price: '4', quantity: '2'},
+				{name: 'Orange', price: '3', quantity: '3'}
+			]
+			function cartTotal(arr) {
+				let total = 0
+				arr.forEach(element => {
+					total += element.price * element.quantity;
+				});
+				return total;
+			}
+			cartTotal(cartArray);
 
-            //2.
-            function showObjects(arr) {
-                const receipt = document.querySelector('#receipt');
-                receipt.innerHTML = '';
-                arr.forEach(element => {
-                    let item = document.createElement('div');
-                    item.innerText = element.name + ' $' + element.price + ' * ' + element.quantity + ' = $' + element.price*element.quantity;
-                    receipt.appendChild(item);
-                });
-                let total = document.createElement('div');
-                total.innerText = 'Cart total: $' + cartTotal(cartArray);
-                receipt.appendChild(total);
-            }
-            showObjects(cartArray);
+			//2.
+			function showObjects(arr) {
+				const receipt = document.querySelector('#receipt');
+				receipt.innerHTML = '';
+				arr.forEach(element => {
+					let item = document.createElement('div');
+					item.innerText = element.name + ' $' + element.price + ' * ' + element.quantity + ' = $' + element.price*element.quantity;
+					receipt.appendChild(item);
+				});
+				let total = document.createElement('div');
+				total.innerText = 'Cart total: $' + cartTotal(cartArray);
+				receipt.appendChild(total);
+			}
+			showObjects(cartArray);
 
-            //add line for each object i.E: Apple $4 * 2 = $8
-            //display the total at the bottom
-        </script>
-    </body>
+			//add line for each object i.E: Apple $4 * 2 = $8
+			//display the total at the bottom
+		</script>
+	</body>
 </html>

@@ -1,118 +1,118 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Exercises</title>
-        <link rel="stylesheet" href="../styles.css">
-    </head>
-    <body>
-        <h1>Exercises</h1>
-        <button id="todo-button" onclick="buttonClick();">Click Me!</button>
-        <p></p>
-        <div id="counter">0</div>
-        <button onclick="counterUp();">Up</button>
-        <button onclick="counterDown();">Down</button>
-        <div id="ex9-cont">
-            <h2>exercise 9</h2>
-            <div id="cart">
-                <button name="Apple" onclick="addItem(name);">Apple</button>
-                <button name="Tomato" onclick="addItem(name);">Tomato</button>
-                <button name="Eggs" onclick="addItem(name);">Eggs</button>
-                <button onclick="clearFood();">Clear</button>
-                <h3>Shpping List:</h3>
-                <div id="food-list"/>
-            </div>
-        </div>
-        <div>
-            <input id="converter-input" type="text">
-            <button name="cm" onclick="convertInput(name)">Convert to cm</button>
-            <button name="inch" onclick="convertInput(name)">Convert to inch</button>
-            <h3>Result:</h3>
-            <div id="result"></div>
-        </div>
-        <script>
-            //exercise 9 - converter
-            function convertInput(name) {
-                //get input from field
-                const numberInput = document.querySelector('#converter-input').value;
-                const result = document.querySelector('#result');
-                if (name === 'cm') {
-                    //set text of result div to input * 2.54
-                    result.innerText = +numberInput * 2.54;
-                } else if (name === 'inch') {
-                    //set text of result div to input / 2.54
-                    result.innerText = +numberInput / 2.54;
-                }
-            }
+	<head>
+		<title>Exercises</title>
+		<link rel="stylesheet" href="../styles.css">
+	</head>
+	<body>
+		<h1>Exercises</h1>
+		<button id="todo-button" onclick="buttonClick();">Click Me!</button>
+		<p></p>
+		<div id="counter">0</div>
+		<button onclick="counterUp();">Up</button>
+		<button onclick="counterDown();">Down</button>
+		<div id="ex9-cont">
+			<h2>exercise 9</h2>
+			<div id="cart">
+				<button name="Apple" onclick="addItem(name);">Apple</button>
+				<button name="Tomato" onclick="addItem(name);">Tomato</button>
+				<button name="Eggs" onclick="addItem(name);">Eggs</button>
+				<button onclick="clearFood();">Clear</button>
+				<h3>Shpping List:</h3>
+				<div id="food-list"/>
+			</div>
+		</div>
+		<div>
+			<input id="converter-input" type="text">
+			<button name="cm" onclick="convertInput(name)">Convert to cm</button>
+			<button name="inch" onclick="convertInput(name)">Convert to inch</button>
+			<h3>Result:</h3>
+			<div id="result"></div>
+		</div>
+		<script>
+			//exercise 9 - converter
+			function convertInput(name) {
+				//get input from field
+				const numberInput = document.querySelector('#converter-input').value;
+				const result = document.querySelector('#result');
+				if (name === 'cm') {
+					//set text of result div to input * 2.54
+					result.innerText = +numberInput * 2.54;
+				} else if (name === 'inch') {
+					//set text of result div to input / 2.54
+					result.innerText = +numberInput / 2.54;
+				}
+			}
 
-            //exercise 9 - shopping cart
-            let shoppingList = [];
-            function addItem(item) {
-                //reset shopping list
-                resetShoppingList();
-                const foodList = document.querySelector('#food-list');
-                shoppingList.push(item);
+			//exercise 9 - shopping cart
+			let shoppingList = [];
+			function addItem(item) {
+				//reset shopping list
+				resetShoppingList();
+				const foodList = document.querySelector('#food-list');
+				shoppingList.push(item);
 
-                //add items to shopping list
-                shoppingList.forEach(element => {
-                    const food = document.createElement('div');
-                    food.innerText = element;
-                    foodList.appendChild(food);
-                });
-            }
+				//add items to shopping list
+				shoppingList.forEach(element => {
+					const food = document.createElement('div');
+					food.innerText = element;
+					foodList.appendChild(food);
+				});
+			}
 
-            function clearFood() {
-                shoppingList = [];
-                resetShoppingList();
-            }
+			function clearFood() {
+				shoppingList = [];
+				resetShoppingList();
+			}
 
-            function resetShoppingList() {
-                document.querySelector('#food-list').innerHTML = '';
-            }
-            
-            let strArray = ['michi', 'lsdf', 'lasf'];
-            function toUpper(str) {
-                let result = str.map(x => x.toUpperCase());
-                console.log(result)
-            }
-            toUpper(strArray);
+			function resetShoppingList() {
+				document.querySelector('#food-list').innerHTML = '';
+			}
+			
+			let strArray = ['michi', 'lsdf', 'lasf'];
+			function toUpper(str) {
+				let result = str.map(x => x.toUpperCase());
+				console.log(result)
+			}
+			toUpper(strArray);
 
-            function arrayDouble(arr) {
-                let result = [];
-                arr.forEach(el => {
-                    result.push(el);
-                    result.push(el);
-                });
-                console.log(result);
-            }
-            arrayDouble(strArray);
+			function arrayDouble(arr) {
+				let result = [];
+				arr.forEach(el => {
+					result.push(el);
+					result.push(el);
+				});
+				console.log(result);
+			}
+			arrayDouble(strArray);
 
-            const intArr = [1,2,3,4,5,6];
-            function arraySum(intArr) {
-                console.log(intArr.reduce((sum, el) => sum += el));
-            }
-            arraySum(intArr);
+			const intArr = [1,2,3,4,5,6];
+			function arraySum(intArr) {
+				console.log(intArr.reduce((sum, el) => sum += el));
+			}
+			arraySum(intArr);
 
-            function buttonClick() {
-                let btn = document.querySelector('#todo-button');
-                let txt = btn.innerText;
-                if (txt === 'Click Me!') {
-                    btn.innerText = 'Done';
-                } else {
-                    btn.innerText = 'Click Me!';
-                }
-            }
-            function counterUp() {
-                const countDiv = document.querySelector('#counter');
-                let count = countDiv.innerText;
-                count ++;
-                countDiv.innerText = count;
-            }
-            function counterDown() {
-                const countDiv = document.querySelector('#counter');
-                let count = countDiv.innerText;
-                count --;
-                countDiv.innerText = count;
-            }
-        </script>
-    </body>
+			function buttonClick() {
+				let btn = document.querySelector('#todo-button');
+				let txt = btn.innerText;
+				if (txt === 'Click Me!') {
+					btn.innerText = 'Done';
+				} else {
+					btn.innerText = 'Click Me!';
+				}
+			}
+			function counterUp() {
+				const countDiv = document.querySelector('#counter');
+				let count = countDiv.innerText;
+				count ++;
+				countDiv.innerText = count;
+			}
+			function counterDown() {
+				const countDiv = document.querySelector('#counter');
+				let count = countDiv.innerText;
+				count --;
+				countDiv.innerText = count;
+			}
+		</script>
+	</body>
 </html>
