@@ -70,6 +70,49 @@ input {
 	padding: 5px 15px;
 }
 
+#todo-list {
+	display: flex;
+	flex-direction: column;
+}
+
+.todo-row {
+	display: flex;
+	justify-content: left;
+	height: 50px;
+	align-items: center;
+}
+
+.todo-checkbox {
+	margin-right: 5px;
+	width: 20px;
+	height: 20px;
+	align-items: center;
+}
+
+.button-icons {
+	height: 15px;
+}
+
+.todo-title {
+	max-width: 150px;
+	text-align: left;
+	flex: 1;
+}
+
+.todo-date {
+	max-width: 100px;
+	text-align: left;
+	flex: 1;
+}
+
+.todo-edit {
+	width: 20px;
+}
+
+.todo-delete {
+	width: 20px;
+}
+
 #converter-input {
 	display: block;
 	margin-bottom: 5px;

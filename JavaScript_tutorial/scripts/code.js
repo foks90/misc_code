@@ -75,6 +75,20 @@ function changeTodoIsEditingProperty(idTodo, isEditing) {
 	});
 }
 
+function convertDate(date) {
+	let splitter;
+	let joiner;
+	if (date.includes('.')) {
+		splitter = '.';
+		joiner = '-';
+	} else {
+		splitter = '-';
+		joiner = '.';
+	}
+	let dateArr = date.split(splitter);
+	return dateArr.reverse().join(joiner);
+}
+
 function resetTodoisEditing() {
 	todos.forEach(element => {
 		if (element.isEditing) element.isEditing = false;
@@ -153,9 +167,13 @@ function render () {
 		unhideHtmlElement('#todo-edit');
 		
 		const editTitleElement = document.querySelector('#edit-title');
-		editTitleElement.innerHTML = getEditTodoTitle()[0] + ' ' + getEditTodoTitle()[1];
+		editTitleElement.innerText = getEditTodoTitle()[0] + ' ' + getEditTodoTitle()[1];
 
 		const editTitleInput = document.querySelector('#edit-title-input');
+		editTitleInput.placeholder = getEditTodoTitle()[0];
+
+		const editDueDateInput = document.querySelector('#edit-date-input');
+		editDueDateInput.value = getEditTodoTitle()[1];
 
 		const editCancelButton = document.querySelector('#edit-cancel-button');
 		editCancelButton.onclick = cancelEdit;
@@ -169,29 +187,49 @@ function render () {
 		unhideHtmlElement('#todo-overview');
 		todos.forEach(todo => {
 			const element = document.createElement('div');
-			element.innerText = todo.title + ' ' + todo.dueDate;
+			element.className = 'todo-row';
+
+			const elementPTitle = document.createElement('p');
+			elementPTitle.innerText = todo.title;
+			elementPTitle.className = 'todo-title';
+			element.appendChild(elementPTitle);
+			
+			const elementPDate = document.createElement('p');
+			elementPDate.innerText = convertDate(todo.dueDate);
+			elementPDate.className = 'todo-date';
+			element.appendChild(elementPDate);
 
 			const checkBoxTodo = document.createElement('input');
 			checkBoxTodo.type = 'checkbox';
-			checkBoxTodo.style = 'width: 20px'
+			checkBoxTodo.className = 'todo-checkbox';
 			checkBoxTodo.checked = todo.isDone;
 			checkBoxTodo.onchange = setTodoState;
 			checkBoxTodo.id = todo.id;
 			element.prepend(checkBoxTodo);
 			
 			const editButton = document.createElement('button');
-			editButton.innerText = 'edit';
 			editButton.style = 'font-size: 14px; margin-left: 10px; padding: 2px;';
 			editButton.onclick = editTodo;
 			editButton.id = todo.id;
 			element.appendChild(editButton);
 
+			const editIcon = document.createElement('img');
+			editIcon.src = 'images/icon-edit.png';
+			editIcon.className = 'button-icons';
+			editIcon.onclick = editTodo;
+			editButton.appendChild(editIcon);
+			
 			const deleteButton = document.createElement('button');
-			deleteButton.innerText = 'Delete';
 			deleteButton.style = 'font-size: 14px; margin-left: 10px; padding: 2px;';
 			deleteButton.onclick = deleteTodo;
 			deleteButton.id = todo.id;
 			element.appendChild(deleteButton);
+			
+			const deleteIcon = document.createElement('img');
+			deleteIcon.src = 'images/icon-delete.png';
+			deleteIcon.className = 'button-icons';
+			deleteIcon.onclick = deleteTodo;
+			deleteButton.appendChild(deleteIcon);
 
 			const todoList = document.querySelector('#todo-list');
 			todoList.appendChild(element);
