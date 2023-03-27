@@ -3,77 +3,37 @@
 	<head>
 		<title>My Todo App</title>
 		<link rel="stylesheet" href="styles.css">
+		<link rel="icon" href="https://www.freepnglogos.com/uploads/fox-head-black-logo-png-22.png">
 	</head>
 	<body>
 		<h1>My Todo List</h1>
-		<input id="todo-title" type="text" placeholder="Add another todo">
-		<input id="date-picker" type="date">
-		<button onclick="addTodo()">Add Todo</button>
-		<div id="todo-list"/>
-		<script>
-			const headline = document.querySelector('#header-text');
-			let todos = [{
-				id: 'id1',
-				title: 'Get groceries',
-				dueDate: '2023-03-29'
-			}, {
-				id: 'id2',
-				title: 'Wash car',
-				dueDate: '2023-03-31'
-			}, {
-				id: 'id3',
-				title: 'Tennis',
-				dueDate: '2023-03-26'
-			}];
-			
-			
-			render();
-			function addTodo () {
-				const inputValue = document.querySelector('#todo-title');
-				const title = inputValue.value;
-
-				const datePicker = document.querySelector('#date-picker');
-				const dueDate = datePicker.value;
-
-				const id = '' + new Date().getTime;
-
-				todos.push({
-					id: id,
-					title: title,
-					dueDate: dueDate
-				});
-				render();
-			}
-
-			function deleteTodo(event) {
-				//const response = confirm("Are you sure you want delete that Todo?");
-				//if (!response) return;
-				const deleteButton = event.target;
-				const idToDelete = deleteButton.id;
-
-				todos = todos.filter(todo => {
-					return todo.id !== idToDelete;
-				});
-				render()
-			}
-
-			function render () {
-				document.querySelector('#todo-list').innerHTML = '';
-				todos.forEach(todo => {
-					const element = document.createElement('div');
-					element.innerText = todo.title + ' ' + todo.dueDate;
-
-					const deleteButton = document.createElement('button');
-					deleteButton.innerText = 'Delete';
-					deleteButton.style = 'font-size: 14px; margin-left: 10px; padding: 2px;';
-					deleteButton.onclick = deleteTodo;
-					deleteButton.id = todo.id;
-					element.appendChild(deleteButton);
-
-					const todoList = document.querySelector('#todo-list');
-					todoList.appendChild(element);
-				});
-			}
-		</script>
+		<div>
+			<div id="todo-overview">
+				<input id="todo-title" type="text" placeholder="Add another todo">
+				<input id="date-picker" type="date">
+				<button id="addTodo-button" onclick="addTodo()">Add Todo</button>
+				<div id="todo-list"/>
+			</div>
+		</div>
+		<div>
+			<div id="todo-edit">
+				<h3 id="edit-title">Sample title</h3>
+				<div class="edit-input">
+					<div id="edit-changeTitle">
+						<h4>Change Title</h4>
+						<input id="edit-title-input" type="text">
+					</div>
+					<div id="edit-changeDate">
+						<h4>Date</h4>
+						<input id="edit-date-input" type="date">
+					</div>
+				</div>
+				<div style="margin-top: 20px">
+					<button id="edit-cancel-button">Cancel</button>
+					<button id="edit-update-button">Update</button>
+				</div>
+			</div>
+		</div>
+		<script src="scripts/code.js"></script>
 	</body>
 </html>
