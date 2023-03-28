@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>My Shpping List</title>
+	<link rel="stylesheet" href="styles/general.css">
+	<link rel="stylesheet" href="styles/recentlyUsed.css">
+	<link rel="stylesheet" href="styles/shoppingList.css">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<main>
+		<input type="text" placeholder="Was willst du einkaufen?">
+		<div class="shoppingList-container" id="shoppingList-container">
+			<h1>Shopping List</h1>
+			<button class="shopping-button">
+				<img class="item-image" src="https://web.getbring.com/assets/images/items/aufschnitt.png"></img>
+				<div class="button-middlesection">
+					<div class="item-name">item name</div>
+					<div class="item-amount">item amount</div>
+				</div>
+				<img class="item-settings" src="icons/icon-menu.png"></img>
+			</button>
+		</div>
+		<div class="recentlyUsed-container" id="recentlyUsed-container">
+			<h1>Recently Used</h1>
+			<button class="recently-button">
+				<img class="item-image" src="https://web.getbring.com/assets/images/items/aufschnitt.png"></img>
+				<div class="button-middlesection">
+					<div class="item-name">item name</div>
+					<div class="item-amount">item amount</div>
+				</div>
+				<img class="item-settings" src="icons/icon-menu.png"></img>
+			</button>
+			<script src="scripts/itemsList.js"></script>
+			<script src="scripts/main.js"></script>
+		</div>
+	</main>
+</body>
+</html>

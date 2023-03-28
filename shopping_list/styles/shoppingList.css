@@ -1,0 +1,59 @@
+.shppingList-container {
+	display: flex;
+	flex-direction: column;
+}
+
+.shopping-button {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	background-color: rgb(238, 82, 79);
+	border: none;
+	border-radius: 8px;
+	height: 60px;
+	width: 100%;
+	margin-bottom: 5px;
+	padding: 0;
+	cursor: pointer;
+	transition: background-color .1s;
+}
+
+.shopping-button:hover {
+	background-color: rgb(255, 55, 55);
+}
+
+.item-image {
+	width: 50px;
+	height: 50px;
+	object-fit: contain;
+	margin-left: 15px;
+}
+
+.button-middlesection {
+	display: flex;
+	height: 50px;
+	flex: 1;
+	text-align: left;
+	flex-direction: column;
+	justify-items: center;
+}
+
+.item-name {
+	font-size: 17px;
+	font-weight: 500;
+}
+
+.item-amount {
+	font-size: 13px;
+}
+
+.item-settings {
+	height: 15px;
+	width: 15px;
+	object-fit: contain;
+	background-color: rgb(171, 171, 171);
+	border-radius: 20px;
+	padding: 3px;
+	margin-right: 10px;
+	opacity: .7;
+}

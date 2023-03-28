@@ -1,0 +1,18 @@
+.recently-button {
+	display: flex;
+	gap: 20px;
+	align-items: center;
+	background-color: rgb(79, 171, 162);;
+	border: none;
+	border-radius: 8px;
+	height: 60px;
+	width: 100%;
+	margin-bottom: 5px;
+	padding: 0;
+	cursor: pointer;
+	transition: background-color .1s;
+}
+
+.recently-button:hover {
+	background-color: rgb(79, 200, 200);
+}
