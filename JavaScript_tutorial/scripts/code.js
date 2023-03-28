@@ -120,6 +120,7 @@ function addTodo () {
 
 function deleteTodo(event) {
 	const deleteButton = event.target;
+	console.log(event);
 	const idToDelete = deleteButton.id;
 
 	removeTodo(idToDelete);

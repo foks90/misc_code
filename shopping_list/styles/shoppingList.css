@@ -27,6 +27,7 @@
 	height: 50px;
 	object-fit: contain;
 	margin-left: 15px;
+	pointer-events: none;
 }
 
 .button-middlesection {
@@ -36,15 +37,18 @@
 	text-align: left;
 	flex-direction: column;
 	justify-items: center;
+	pointer-events: none;
 }
 
 .item-name {
 	font-size: 17px;
 	font-weight: 500;
+	pointer-events: none;
 }
 
 .item-amount {
 	font-size: 13px;
+	pointer-events: none;
 }
 
 .item-settings {
